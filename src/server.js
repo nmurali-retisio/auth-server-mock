@@ -1,9 +1,15 @@
 var express = require('express');
 const cors = require('cors');
 const users = require('./users');
+const { Kafka } = require('kafkajs')
+
+const kafka = new Kafka({
+    clientId: 'role-group',
+    brokers: ['localhost:9092'],
+})
+
 require('dotenv').config()
 
-var jwt = require('jsonwebtoken');
 
 const port = process.env.PORT;
 const secret = process.env.JWT_SECRET;
@@ -12,7 +18,27 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/auth", (req, res) => {
+const jwt = require('jsonwebtoken');
+
+const producer = kafka.producer()
+
+const roles = [
+    {
+        "id": "ANALYTICS_MANAGER",
+        "name": "Analytics Manager",
+        "description": "Analytics Manager",
+        "permissionIds": [
+            "domain.analytics.read.per-g",
+            "domain.analytics.write.per-g",
+            "domain.rbac.read.per-g",
+            "domain.analytics.delete.per-g"
+        ],
+        "createdAt": "2022-06-16T16:19:20.209",
+        "lastModifiedAt": "2022-06-16T16:19:20.209"
+    }
+]
+
+app.post("/sign-in", (req, res) => {
     const user = users[req.body.email];
     if (user === undefined) {
         res.status(403).send({
@@ -41,14 +67,86 @@ app.post("/auth", (req, res) => {
 })
 
 app.get("/verify", (req, res) => {
-    const token = req.header('Authorization');
-    jwt.verify(token, secret, function (err, decoded) {
+    console.log("Verify request incoming")
+    console.log("Request Headers ", req.headers)
+    const token = req.header('authorization');
+    jwt.verify(token.split(' ')[1], secret, function (err, decoded) {
         if (err) {
             console.log(err);
+            res.sendStatus(403);
         }
+        console.log("decoded: ", decoded)
+        res.setHeader('x-role-ids', decoded.role)
         res.send(decoded);
     });
 })
+
+app.get('/rbac/api/v1/roles', (req, res) => {
+    res.send({
+        "pagination": {
+            "totalCount": 1,
+            "limit": 100,
+            "offset": 1
+        },
+        "roles": roles
+    })
+})
+
+app.get('/rbac/addRole', async (req, res) => {
+    const randomNumber = new Date().getMilliseconds()
+    const roleId = `ANALYTICS_MANAGER_${randomNumber}`;
+    const roleName = `Analytics Manager ${randomNumber}`;
+    roles.push({
+        "id": roleId,
+        "name": roleName,
+        "description": "Analytics Manager",
+        "permissionIds": [
+            "domain.analytics.read.per-g",
+            "domain.analytics.write.per-g",
+            "domain.rbac.read.per-g",
+            "domain.analytics.delete.per-g"
+        ],
+        "createdAt": "2022-06-16T16:19:20.209",
+        "lastModifiedAt": "2022-06-16T16:19:20.209"
+    })
+    await producer.connect();
+    await producer.send({
+        topic: 'role-events',
+        messages: [{
+            value: JSON.stringify({
+                "type": "role-created",
+                "role": {
+                    "id": roleId,
+                    "name": roleName,
+                    "description": "description",
+                    "permissionIds": ["GetProduct:write:Domain:Content"],
+                    "createdAt": "2022-04-18T13:39:39.096",
+                    "lastModifiedAt": "2022-05-07T07:46:09.561"
+                }
+            })
+        }]
+    });
+    await producer.disconnect();
+    res.send(roles)
+})
+
+app.delete('/rbac/remove/:roleId', async (req, res) => {
+    await producer.connect();
+    await producer.send({
+        topic: 'role-events',
+        messages: [{
+            value: JSON.stringify({
+                "type": "role-deleted",
+                "id": req.params.roleId
+            })
+        }]
+    });
+    await producer.disconnect();
+    res.send(roles)
+})
+
+// publish updates on users via kafka
+// replace all role related functionality with role from header
 
 app.listen(port, function () {
     console.log("Listening on port " + port);

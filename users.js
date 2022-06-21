@@ -24,6 +24,18 @@ module.exports = {
         username: 'nikita',
         email: 'nikita@retisio.com',
         password: 'nikita',
-        role: 'CATEGORY_MANAGER_TOYS'
+        role: 'CATEGORY_MANAGER_TOYS',
+        analyticsClaims: {
+            domainAccess: ["Product",
+             "Order", "Revenue", "Search",
+              "Recommendation", "Customer",
+               "Acquisition", "Discovery", "Engagement",
+                "Retention", "Conversion"],
+            dataAccess: [{
+                member: "ProductCategories.name",
+                operator: "Equals",
+                values: ["Toys"]
+            }]
+        }
     }
 }
