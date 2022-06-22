@@ -38,8 +38,8 @@ const roles = [
     }
 ]
 
-app.post("/sign-in", (req, res) => {
-    const user = users[req.body.email];
+app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
+    const user = users[req.body.userName];
     if (user === undefined) {
         res.status(403).send({
             error: "User not found"
@@ -57,6 +57,9 @@ app.post("/sign-in", (req, res) => {
             expiresIn: '1d',
         });
         res.send({
+            "id": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+            "status": 200,
+            "statusMessage": "SignIn Successful",
             "token": token
         })
     } else {
@@ -64,6 +67,13 @@ app.post("/sign-in", (req, res) => {
             error: "Incorrect password"
         });
     }
+})
+
+app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
+    res.send({
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+        "roles": ["ANALYTICS_MANAGER"],
+    })
 })
 
 app.get("/verify", (req, res) => {

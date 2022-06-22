@@ -1,18 +1,18 @@
 module.exports = {
     'rob@retisio.com': {
-        username: 'rob',
+        userName: 'rob',
         email: 'rob@retisio.com',
         password: 'rob',
         role: 'ADMIN'
     },
     'julie@retisio.com': {
-        username: 'julie',
+        userName: 'julie',
         email: 'julie@retisio.com',
         password: 'julie',
         role: 'ADMIN',
     },
     'steve@retisio.com': {
-        username: 'steve',
+        userName: 'steve',
         email: 'steve@retisio.com',
         password: 'steve',
         role: 'COO_CUSTOMER',
@@ -21,9 +21,13 @@ module.exports = {
         }
     },
     'nikita@retisio.com': {
-        username: 'nikita',
+        userName: 'nikita',
         email: 'nikita@retisio.com',
         password: 'nikita',
         role: 'CATEGORY_MANAGER_TOYS'
+    }, 
+    'Analytics-User1@aienterprise.com': {
+        userName : "Analytics-User1@aienterprise.com",
+        password : "Login@9875"
     }
 }
