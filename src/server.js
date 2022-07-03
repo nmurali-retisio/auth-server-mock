@@ -72,7 +72,25 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
 app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
     res.send({
         "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
-        "roles": ["ANALYTICS_MANAGER"],
+        "profile": {
+            "firstName": "analytics-user1",
+            "middleName": "Testing",
+            "lastName": "Analytics-User1",
+            "userName": "ARC Testing  Analytics-User1",
+            "shortName": "aA",
+            "email": "analytics-user1@aienterprise.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "roles": [
+            "ANALYTICS_MANAGER"
+        ],
+        "channels": [
+            "dev-www.us.com"
+        ],
+        "active": true
     })
 })
 
@@ -91,7 +109,7 @@ app.get("/verify", (req, res) => {
     });
 })
 
-app.get('/rbac/api/v1/roles', (req, res) => {
+app.get('/api/rbac/api/v1/roles', (req, res) => {
     res.send({
         "pagination": {
             "totalCount": 1,
