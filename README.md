@@ -51,3 +51,20 @@ Example  response:
     "exp": 1622633085
 }
 ```
+
+
+{
+  "sub": "a1pkSzVtdmhCZGlrWk9aQjcyX18yTWJCSUoxLUk1dEpTTjhkTjVITTJwVTJLT2xSUzkyczQ2b1dyQVd0Q25nSg==",
+  "claims": {
+    "type": "in",
+    "cg": null,
+    "fn": "analytics-user1",
+    "ln": "Analytics-User1",
+    "chnls": "dev-www.us.com",
+    "per": null,
+    "roles": "ANALYTICS_MANAGER"
+  },
+  "iss": "AuthenticationProfile",
+  "exp": 1658249653,
+  "iat": 1658220853
+}
