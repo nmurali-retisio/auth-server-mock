@@ -24,7 +24,7 @@ const producer = kafka.producer()
 
 const roles = [
     {
-        "id": "ANALYTICS_MANAGER",
+        "id": "ANALYTICS_SUPER_ADMIN",
         "name": "Analytics Manager",
         "description": "Analytics Manager",
         "permissionIds": [
@@ -56,7 +56,7 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
               "ln": "Analytics-User1",
               "chnls": "dev-www.us.com",
               "per": null,
-              "roles": "ANALYTICS_MANAGER"
+              "roles": "ANALYTICS_SUPER_ADMIN"
             },
             "iss": "AuthenticationProfile",
         }
