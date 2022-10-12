@@ -1,6 +1,14 @@
 module.exports = {
-    'Analytics-User1@aienterprise.com': {
-        userName: "Analytics-User1@aienterprise.com",
-        password: "Login@9875"
-    }
+    'User1@org1.com': {
+        userName: "User1@org1.com",
+        password: "User1"
+    },
+    'User2@org2.com': {
+        userName: "User2@org2.com",
+        password: "User2"
+    },
+    'User3@org3.com': {
+        userName: "User3@org3.com",
+        password: "User3"
+    },
 }

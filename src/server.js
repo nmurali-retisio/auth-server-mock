@@ -56,7 +56,9 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
               "ln": "Analytics-User1",
               "chnls": "dev-www.us.com",
               "per": null,
-              "roles": "ANALYTICS_SUPER_ADMIN"
+              "roles": "ANALYTICS_SUPER_ADMIN",
+              "orgId": "MichaelKors",
+              "siteId": "US"
             },
             "iss": "AuthenticationProfile",
         }
@@ -92,7 +94,7 @@ app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
         "modifiedAt": "2022-06-16 16:48:53",
         "designation": "Testing",
         "roles": [
-            "ANALYTICS_MANAGER"
+            "ANALYTICS_SUPER_ADMIN"
         ],
         "channels": [
             "dev-www.us.com"
