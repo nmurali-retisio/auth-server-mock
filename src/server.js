@@ -49,24 +49,15 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
     if (user.password === req.body.password) {
         const tokenBody = {
             "sub": "a1pkSzVtdmhCZGlrWk9aQjcyX18yTWJCSUoxLUk1dEpTTjhkTjVITTJwVTJLT2xSUzkyczQ2b1dyQVd0Q25nSg==",
-            "claims": {
-              "type": "in",
-              "cg": null,
-              "fn": "analytics-user1",
-              "ln": "Analytics-User1",
-              "chnls": "dev-www.us.com",
-              "per": null,
-              "roles": "ANALYTICS_SUPER_ADMIN",
-              "orgId": "MichaelKors",
-              "siteId": "US"
-            },
+            "claims": user.claims,
             "iss": "AuthenticationProfile",
         }
+        console.log("Token Body: ", tokenBody)
         const token = jwt.sign(tokenBody, secret, {
             expiresIn: '1d',
         });
         res.send({
-            "id": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+            "id": user.id,
             "status": 200,
             "statusMessage": "SignIn Successful",
             "token": token

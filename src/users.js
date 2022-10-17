@@ -1,14 +1,50 @@
 module.exports = {
-    'User1@org1.com': {
-        userName: "User1@org1.com",
-        password: "User1"
+    'Joe@allenbrothers.com': {
+        userName: "Joe@allenbrothers.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "Joe",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_SUPER_ADMIN",
+            "orgId": "allenbrothers",
+            "siteId": "US"
+          }
     },
-    'User2@org2.com': {
-        userName: "User2@org2.com",
-        password: "User2"
+    'John@allenbrothers.com': {
+        userName: "John@allenbrothers.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngK",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "John",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_SUPER_ADMIN",
+            "orgId": "allenbrothers",
+            "siteId": "CA"
+          }
     },
-    'User3@org3.com': {
-        userName: "User3@org3.com",
-        password: "User3"
+    'Jeff@michaelkors.com': {
+        userName: "Jeff@michaelkors.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngL",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "Jeff",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_SUPER_ADMIN",
+            "orgId": "michaelkors",
+            "siteId": "US"
+          }
     },
 }
