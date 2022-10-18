@@ -47,4 +47,18 @@ module.exports = {
             "siteId": "US"
           }
     },
+    'Error@michaelkors.com': {
+        userName: "Error@michaelkors.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngA",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "Error",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_SUPER_ADMIN"
+          }
+    }
 }
