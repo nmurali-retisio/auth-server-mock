@@ -42,7 +42,7 @@ module.exports = {
             "ln": "Doe",
             "chnls": "dev-www.us.com",
             "per": null,
-            "roles": "ANALYTICS_SUPER_ADMIN",
+            "roles": "ANALYTICS_ADMIN",
             "orgId": "michaelkors",
             "siteId": "US"
           }
@@ -58,7 +58,7 @@ module.exports = {
             "ln": "Doe",
             "chnls": "dev-www.us.com",
             "per": null,
-            "roles": "ANALYTICS_SUPER_ADMIN"
+            "roles": "TEST"
           }
     }
 }

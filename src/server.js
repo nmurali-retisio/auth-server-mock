@@ -63,8 +63,14 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
             "token": token
         })
     } else {
-        res.status(403).send({
-            error: "Incorrect password"
+        res.status(400).send({
+            "status": 400,
+            "errors": [
+                {
+                    "code": "ERR_ACC_03",
+                    "message": "Invalid credentials"
+                }
+            ]
         });
     }
 })
