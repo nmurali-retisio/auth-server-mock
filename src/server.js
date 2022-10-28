@@ -81,9 +81,9 @@ app.get("/verify", (req, res) => {
 app.get('/api/rbac/api/v1/roles', (req, res) => {
     res.send({
         "pagination": {
-            "totalCount": 1,
+            "totalCount": roles.length,
             "limit": 100,
-            "offset": 1
+            "offset": 0
         },
         "roles": roles
     })
