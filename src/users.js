@@ -1,4 +1,4 @@
-module.exports = {
+const users = {
     'Joe@allenbrothers.com': {
         userName: "Joe@allenbrothers.com",
         password: "Login@1234",
@@ -13,7 +13,7 @@ module.exports = {
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "allenbrothers",
             "siteId": "US"
-          }
+        }
     },
     'John@allenbrothers.com': {
         userName: "John@allenbrothers.com",
@@ -29,7 +29,7 @@ module.exports = {
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "allenbrothers",
             "siteId": "CA"
-          }
+        }
     },
     'Jeff@michaelkors.com': {
         userName: "Jeff@michaelkors.com",
@@ -45,7 +45,7 @@ module.exports = {
             "roles": "ANALYTICS_ADMIN",
             "orgId": "michaelkors",
             "siteId": "US"
-          }
+        }
     },
     'Error@michaelkors.com': {
         userName: "Error@michaelkors.com",
@@ -59,6 +59,33 @@ module.exports = {
             "chnls": "dev-www.us.com",
             "per": null,
             "roles": "TEST"
-          }
+        }
     }
 }
+
+const userInfo = {
+    "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ": {
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+        "profile": {
+            "firstName": "Joe",
+            "middleName": "Testing",
+            "lastName": "User",
+            "userName": "Joe Testing User",
+            "shortName": "JoeAB",
+            "email": "Joe@allenbrothers.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "roles": [
+            "ANALYTICS_SUPER_ADMIN"
+        ],
+        "channels": [
+            "dev-www.us.com"
+        ],
+        "active": true
+    }
+}
+
+module.exports = { users, userInfo }

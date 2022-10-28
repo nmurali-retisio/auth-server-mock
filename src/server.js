@@ -1,6 +1,7 @@
 var express = require('express');
 const cors = require('cors');
-const users = require('./users');
+const { users, userInfo } = require('./users');
+const roles = require('./roles');
 const { Kafka } = require('kafkajs')
 
 const kafka = new Kafka({
@@ -9,7 +10,6 @@ const kafka = new Kafka({
 })
 
 require('dotenv').config()
-
 
 const port = process.env.PORT;
 const secret = process.env.JWT_SECRET;
@@ -21,22 +21,6 @@ app.use(express.json());
 const jwt = require('jsonwebtoken');
 
 const producer = kafka.producer()
-
-const roles = [
-    {
-        "id": "ANALYTICS_SUPER_ADMIN",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
-        "permissionIds": [
-            "domain.analytics.read.per-g",
-            "domain.analytics.write.per-g",
-            "domain.rbac.read.per-g",
-            "domain.analytics.delete.per-g"
-        ],
-        "createdAt": "2022-06-16T16:19:20.209",
-        "lastModifiedAt": "2022-06-16T16:19:20.209"
-    }
-]
 
 app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
     const user = users[req.body.userName];
@@ -76,28 +60,7 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
 })
 
 app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
-    res.send({
-        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
-        "profile": {
-            "firstName": "analytics-user1",
-            "middleName": "Testing",
-            "lastName": "Analytics-User1",
-            "userName": "ARC Testing  Analytics-User1",
-            "shortName": "aA",
-            "email": "analytics-user1@aienterprise.com",
-            "phone": "4949494949"
-        },
-        "createdAt": "2022-06-16 16:39:11",
-        "modifiedAt": "2022-06-16 16:48:53",
-        "designation": "Testing",
-        "roles": [
-            "ANALYTICS_SUPER_ADMIN"
-        ],
-        "channels": [
-            "dev-www.us.com"
-        ],
-        "active": true
-    })
+    res.send(userInfo[req.params.id])
 })
 
 app.get("/verify", (req, res) => {
