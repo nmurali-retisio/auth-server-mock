@@ -11,7 +11,7 @@ const users = {
             "chnls": "dev-www.us.com",
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
-            "orgId": "allenbrothers",
+            "orgId": "1001",
             "siteId": "US"
         }
     },
@@ -27,7 +27,7 @@ const users = {
             "chnls": "dev-www.us.com",
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
-            "orgId": "allenbrothers",
+            "orgId": "1001",
             "siteId": "CA"
         }
     },
@@ -43,7 +43,7 @@ const users = {
             "chnls": "dev-www.us.com",
             "per": null,
             "roles": "ANALYTICS_ADMIN",
-            "orgId": "michaelkors",
+            "orgId": "1002",
             "siteId": "US"
         }
     },
@@ -78,6 +78,7 @@ const userInfo = {
         "createdAt": "2022-06-16 16:39:11",
         "modifiedAt": "2022-06-16 16:48:53",
         "designation": "Testing",
+        "orgId": "1001",
         "roles": [
             "ANALYTICS_SUPER_ADMIN"
         ],

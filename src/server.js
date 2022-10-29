@@ -79,13 +79,14 @@ app.get("/verify", (req, res) => {
 })
 
 app.get('/api/rbac/api/v1/roles', (req, res) => {
+    const {org} = req.query;
     res.send({
         "pagination": {
             "totalCount": roles.length,
             "limit": 100,
             "offset": 0
         },
-        "roles": roles
+        "roles": roles.filter((role) => role.id.includes("ANALYTICS_") && role.orgId === org)
     })
 })
 
