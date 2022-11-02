@@ -2,6 +2,7 @@ var express = require('express');
 const cors = require('cors');
 const { users, userInfo } = require('./users');
 const roles = require('./roles');
+const imternalUsers = require('./internalusers');
 const { Kafka } = require('kafkajs')
 
 const kafka = new Kafka({
@@ -66,6 +67,76 @@ app.get('/api/account/api/v1/internal-users', (req, res) => {
 app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
     res.send(userInfo[req.params.id])
 })
+
+app.post("/api/v1/internal-users/sign-in", (req, res) => {
+    const user = users[req.body.userName];
+    if (user === undefined) {
+        res.status(403).send({
+            error: "User not found"
+        });
+        return;
+    }
+    if (user.password === req.body.password) {
+        const tokenBody = {
+            "sub": "a1pkSzVtdmhCZGlrWk9aQjcyX18yTWJCSUoxLUk1dEpTTjhkTjVITTJwVTJLT2xSUzkyczQ2b1dyQVd0Q25nSg==",
+            "claims": {
+              "type": "in",
+              "cg": null,
+              "fn": "analytics-user1",
+              "ln": "Analytics-User1",
+              "chnls": "dev-www.us.com",
+              "per": null,
+              "orgId": 'org1',
+              "siteId": 'site1',
+              "roles": "SUPER_ADMIN"
+            },
+            "iss": "AuthenticationProfile",
+        }
+        const token = jwt.sign(tokenBody, secret, {
+            expiresIn: '1d',
+        });
+        res.send({
+            "id": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+            "status": 200,
+            "statusMessage": "SignIn Successful",
+            "token": token
+        })
+    } else {
+        res.status(403).send({
+            error: "Incorrect password"
+        });
+    }
+})
+
+app.get('/api/v1/internal-users/:id', (req, res) => {
+    res.send({
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngJ",
+        "profile": {
+            "firstName": "analytics-user1",
+            "middleName": "Testing",
+            "lastName": "Analytics-User1",
+            "userName": "ARC Testing  Analytics-User1",
+            "shortName": "aA",
+            "email": "analytics-user1@aienterprise.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "roles": [
+            "SUPER_ADMIN"
+        ],
+        "channels": [
+            "dev-www.us.com"
+        ],
+        "active": true
+    })
+})
+
+app.get('/api/v1/internal-users', (req, res) => {
+    res.send(imternalUsers)
+})
+
 
 app.get("/verify", (req, res) => {
     console.log("Verify request incoming")
