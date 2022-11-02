@@ -42,7 +42,7 @@ const users = {
             "ln": "Doe",
             "chnls": "dev-www.us.com",
             "per": null,
-            "roles": "ANALYTICS_ADMIN",
+            "roles": "ANALYTICS_MANAGER, ANALYTICS_MANAGER2",
             "orgId": "1002",
             "siteId": "US"
         }

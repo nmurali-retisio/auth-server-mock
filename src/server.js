@@ -59,6 +59,10 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
     }
 })
 
+app.get('/api/account/api/v1/internal-users', (req, res) => {
+    res.send(userInfo)
+})
+
 app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
     res.send(userInfo[req.params.id])
 })
