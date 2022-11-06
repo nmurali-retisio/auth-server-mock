@@ -37,7 +37,6 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
             "claims": user.claims,
             "iss": "AuthenticationProfile",
         }
-        console.log("Token Body: ", tokenBody)
         const token = jwt.sign(tokenBody, secret, {
             expiresIn: '1d',
         });
@@ -65,7 +64,18 @@ app.get('/api/account/api/v1/internal-users', (req, res) => {
 })
 
 app.get('/api/account/api/v1/internal-users/:id', (req, res) => {
-    res.send(userInfo[req.params.id])
+    const internalUser = userInfo[req.params.id];
+    console.log("Internal User: ", internalUser)
+    if (!internalUser) return res.status(400).send({
+        "status": 400,
+        "errors": [
+            {
+                "code": "ERR_ACC_02",
+                "message": "Please verify your details and re-try"
+            }
+        ]
+    })
+    res.send(internalUser)
 })
 
 app.post("/api/v1/internal-users/sign-in", (req, res) => {
@@ -80,15 +90,15 @@ app.post("/api/v1/internal-users/sign-in", (req, res) => {
         const tokenBody = {
             "sub": "a1pkSzVtdmhCZGlrWk9aQjcyX18yTWJCSUoxLUk1dEpTTjhkTjVITTJwVTJLT2xSUzkyczQ2b1dyQVd0Q25nSg==",
             "claims": {
-              "type": "in",
-              "cg": null,
-              "fn": "analytics-user1",
-              "ln": "Analytics-User1",
-              "chnls": "dev-www.us.com",
-              "per": null,
-              "orgId": 'org1',
-              "siteId": 'site1',
-              "roles": "SUPER_ADMIN"
+                "type": "in",
+                "cg": null,
+                "fn": "analytics-user1",
+                "ln": "Analytics-User1",
+                "chnls": "dev-www.us.com",
+                "per": null,
+                "orgId": 'org1',
+                "siteId": 'site1',
+                "roles": "SUPER_ADMIN"
             },
             "iss": "AuthenticationProfile",
         }
@@ -154,7 +164,7 @@ app.get("/verify", (req, res) => {
 })
 
 app.get('/api/rbac/api/v1/roles', (req, res) => {
-    const {org} = req.query;
+    const { org } = req.query;
     res.send({
         "pagination": {
             "totalCount": roles.length,
