@@ -1,8 +1,8 @@
 module.exports = [
     {
         "id": "ANALYTICS_SUPER_ADMIN",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
+        "name": "Analytics Super Admin",
+        "description": "Analytics Super Admin",
         "permissionIds": [
             "domain.analytics.read.per-g",
             "domain.analytics.write.per-g",
@@ -11,26 +11,12 @@ module.exports = [
         ],
         "createdAt": "2022-06-16T16:19:20.209",
         "lastModifiedAt": "2022-06-16T16:19:20.209",
-        "orgId": "1001"
-    },
-    {
-        "id": "ANALYTICS_ADMIN",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
-        "permissionIds": [
-            "domain.analytics.read.per-g",
-            "domain.analytics.write.per-g",
-            "domain.rbac.read.per-g",
-            "domain.analytics.delete.per-g"
-        ],
-        "createdAt": "2022-06-16T16:19:20.209",
-        "lastModifiedAt": "2022-06-16T16:19:20.209",
-        "orgId": "1001"
+        "orgId": "org1"
     },
     {
         "id": "ANALYTICS_USER",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
+        "name": "Analytics User",
+        "description": "Analytics User",
         "permissionIds": [
             "domain.analytics.read.per-g",
             "domain.analytics.write.per-g",
@@ -39,12 +25,12 @@ module.exports = [
         ],
         "createdAt": "2022-06-16T16:19:20.209",
         "lastModifiedAt": "2022-06-16T16:19:20.209",
-        "orgId": "1001"
+        "orgId": "org1"
     },
     {
         "id": "ANALYTICS_SUPER_ADMIN",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
+        "name": "Analytics Super Admin",
+        "description": "Analytics Super Admin",
         "permissionIds": [
             "domain.analytics.read.per-g",
             "domain.analytics.write.per-g",
@@ -53,12 +39,12 @@ module.exports = [
         ],
         "createdAt": "2022-06-16T16:19:20.209",
         "lastModifiedAt": "2022-06-16T16:19:20.209",
-        "orgId": "1002"
+        "orgId": "org2"
     },
     {
-        "id": "USER",
-        "name": "Analytics Manager",
-        "description": "Analytics Manager",
+        "id": "ANALYTICS_USER",
+        "name": "Analytics User",
+        "description": "Analytics User",
         "permissionIds": [
             "domain.analytics.read.per-g",
             "domain.analytics.write.per-g",
@@ -66,6 +52,7 @@ module.exports = [
             "domain.analytics.delete.per-g"
         ],
         "createdAt": "2022-06-16T16:19:20.209",
-        "lastModifiedAt": "2022-06-16T16:19:20.209"
+        "lastModifiedAt": "2022-06-16T16:19:20.209",
+        "orgId": "org2"
     }
 ]
