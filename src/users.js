@@ -12,7 +12,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "org1",
-            "siteId": "site,site2,site3"
+            "siteId": "site1,site2,site3"
         }
     },
     'userABUS@allenbrothers.com': {
@@ -28,7 +28,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_USER",
             "orgId": "org1",
-            "siteId": "site1"
+            "siteId": "site1,site2,site3"
         }
     },
     'superadminABCA@allenbrothers.com': {
@@ -152,6 +152,11 @@ const userInfo = {
         "modifiedAt": "2022-06-16 16:48:53",
         "designation": "Testing",
         "orgId": "org1",
+        "siteId": [
+            "site1",
+            "site2",
+            "site3"
+        ],
         "roles": [
             "ANALYTICS_USER"
         ],
