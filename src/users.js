@@ -31,6 +31,22 @@ const users = {
             "siteId": "site1,site2,site3"
         }
     },
+    'user2ABUS@allenbrothers.com': {
+        userName: "user2ABUS@allenbrothers.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngR",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "John",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_USER",
+            "orgId": "org1",
+            "siteId": "site1,site2,site3"
+        }
+    },
     'superadminABCA@allenbrothers.com': {
         userName: "superadminABCA@allenbrothers.com",
         password: "Login@1234",
@@ -118,7 +134,7 @@ const userInfo = {
             "firstName": "Super Admin",
             "middleName": "Testing",
             "lastName": "Testing",
-            "userName": "Super Admin Testing user",
+            "userName": "Super Admin ABUS",
             "shortName": "SuperAdmin US",
             "email": "superadminABUS@allenbrothers.com",
             "phone": "4949494949"
@@ -143,9 +159,37 @@ const userInfo = {
             "firstName": "User",
             "middleName": "Testing",
             "lastName": "Testing",
-            "userName": "Testing user",
+            "userName": "User 1 ABUS",
             "shortName": "SuperAdmin US",
             "email": "userABUS@allenbrothers.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "orgId": "org1",
+        "siteId": [
+            "site1",
+            "site2",
+            "site3"
+        ],
+        "roles": [
+            "ANALYTICS_USER"
+        ],
+        "channels": [
+            "dev-www.us.com"
+        ],
+        "active": true
+    },
+    "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngR": {
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngR",
+        "profile": {
+            "firstName": "User",
+            "middleName": "Testing",
+            "lastName": "Testing",
+            "userName": "User 2 ABUS",
+            "shortName": "User2 US",
+            "email": "user2ABUS@allenbrothers.com",
             "phone": "4949494949"
         },
         "createdAt": "2022-06-16 16:39:11",
