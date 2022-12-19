@@ -146,7 +146,7 @@ const userInfo = {
         "roles": [
             "ANALYTICS_SUPER_ADMIN"
         ],
-        "siteId": [
+        "sites": [
             "site1",
             "site2",
             "site3"
@@ -168,7 +168,7 @@ const userInfo = {
         "modifiedAt": "2022-06-16 16:48:53",
         "designation": "Testing",
         "orgId": "org1",
-        "siteId": [
+        "sites": [
             "site1",
             "site2",
             "site3"
@@ -196,7 +196,7 @@ const userInfo = {
         "modifiedAt": "2022-06-16 16:48:53",
         "designation": "Testing",
         "orgId": "org1",
-        "siteId": [
+        "sites": [
             "site1",
             "site2",
             "site3"
@@ -227,7 +227,7 @@ const userInfo = {
         "roles": [
             "ANALYTICS_SUPER_ADMIN"
         ],
-        "channels": [
+        "sites": [
             "dev-www.us.com"
         ],
         "active": true
