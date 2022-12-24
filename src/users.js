@@ -12,7 +12,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "org1",
-            "siteId": "site1,site2,site3"
+            "sites": "site1,site2,site3"
         }
     },
     'userABUS@allenbrothers.com': {
@@ -28,7 +28,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_USER",
             "orgId": "org1",
-            "siteId": "site1,site2,site3"
+            "sites": "site1,site2,site3"
         }
     },
     'user2ABUS@allenbrothers.com': {
@@ -44,7 +44,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_USER",
             "orgId": "org1",
-            "siteId": "site1,site2,site3"
+            "sites": "site1,site2,site3"
         }
     },
     'superadminABCA@allenbrothers.com': {
@@ -60,7 +60,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "org1",
-            "siteId": "site2"
+            "sites": "site2"
         }
     },
     'userCA@allenbrothers.com': {
@@ -76,7 +76,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_USER",
             "orgId": "org1",
-            "siteId": "site2"
+            "sites": "site2"
         }
     },
     'superadminMKUS@michaelkors.com': {
@@ -92,7 +92,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "org2",
-            "siteId": "site1"
+            "sites": "site1"
         }
     },
     'userMKUS@michaelkors.com': {
@@ -108,7 +108,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_USER",
             "orgId": "org2",
-            "siteId": "site1"
+            "sites": "site1"
         }
     },
     'Error@michaelkors.com': {
