@@ -28,7 +28,7 @@ const users = {
             "per": null,
             "roles": "ANALYTICS_SUPER_ADMIN",
             "orgId": "org1",
-            "sites": "abs_dev_001"
+            "sites": "abs-dev-001"
         }
     },
     'userABUS@allenbrothers.com': {
@@ -185,7 +185,7 @@ const userInfo = {
         "designation": "Testing",
         "orgId": "org1",
         "sites": [
-            "abs_dev_001",
+            "abs-dev-001",
         ],
         "roles": [
             "ANALYTICS_SUPER_ADMIN"
