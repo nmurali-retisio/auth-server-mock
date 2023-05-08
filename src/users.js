@@ -15,6 +15,22 @@ const users = {
             "sites": "site1,site2,site3"
         }
     },
+    'superadminABLLE@allenbrothers.com': {
+        userName: "superadminABLLE@allenbrothers.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngY",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "Joe",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_SUPER_ADMIN",
+            "orgId": "org1",
+            "sites": "abs_dev_001"
+        }
+    },
     'userABUS@allenbrothers.com': {
         userName: "userABUS@allenbrothers.com",
         password: "Login@1234",
@@ -150,6 +166,32 @@ const userInfo = {
             "site1",
             "site2",
             "site3"
+        ],
+        "active": true
+    },
+    "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngY":{
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCngY",
+        "profile": {
+            "firstName": "User",
+            "middleName": "Testing",
+            "lastName": "Testing",
+            "userName": "User 1 ABUS",
+            "shortName": "SuperAdmin US",
+            "email": "userABUS@allenbrothers.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "orgId": "org1",
+        "sites": [
+            "abs_dev_001",
+        ],
+        "roles": [
+            "ANALYTICS_SUPER_ADMIN"
+        ],
+        "channels": [
+            "dev-www.us.com"
         ],
         "active": true
     },

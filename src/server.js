@@ -38,7 +38,7 @@ app.post("/api/account/api/v1/internal-users/sign-in", (req, res) => {
             "iss": "AuthenticationProfile",
         }
         const token = jwt.sign(tokenBody, secret, {
-            expiresIn: '1d',
+            expiresIn: '3d',
         });
         res.send({
             "id": user.id,
