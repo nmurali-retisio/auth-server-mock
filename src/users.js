@@ -31,6 +31,22 @@ const users = {
             "sites": "abs-dev-001"
         }
     },
+    'userABLLE@allenbrothers.com': {
+        userName: "userABLLE@allenbrothers.com",
+        password: "Login@1234",
+        id: "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCng2",
+        claims: {
+            "type": "in",
+            "cg": null,
+            "fn": "Joe",
+            "ln": "Doe",
+            "chnls": "dev-www.us.com",
+            "per": null,
+            "roles": "ANALYTICS_USER",
+            "orgId": "org1",
+            "sites": "abs-dev-001"
+        }
+    },
     'userABUS@allenbrothers.com': {
         userName: "userABUS@allenbrothers.com",
         password: "Login@1234",
@@ -189,6 +205,32 @@ const userInfo = {
         ],
         "roles": [
             "ANALYTICS_SUPER_ADMIN"
+        ],
+        "channels": [
+            "dev-www.us.com"
+        ],
+        "active": true
+    },
+    "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCng2":{
+        "businessUserId": "kZdK5mvhBdikZOZB72__2MbBIJ1-I5tJSN8dN5HM2pU2KOlRS92s46oWrAWtCng2",
+        "profile": {
+            "firstName": "User",
+            "middleName": "Testing",
+            "lastName": "Testing",
+            "userName": "User 1 ABUS",
+            "shortName": "",
+            "email": "userABLLE@allenbrothers.com",
+            "phone": "4949494949"
+        },
+        "createdAt": "2022-06-16 16:39:11",
+        "modifiedAt": "2022-06-16 16:48:53",
+        "designation": "Testing",
+        "orgId": "org1",
+        "sites": [
+            "abs-dev-001",
+        ],
+        "roles": [
+            "ANALYTICS_USER"
         ],
         "channels": [
             "dev-www.us.com"
